@@ -19,8 +19,7 @@ export const TagCloudComponent = () => {
 
     // Initialisation de TagCloud
     TagCloud(container, texts);
-    window.location.reload;
-  }, [window.location.reload]);
+  }, []);
 
   return <div></div>;
 };
