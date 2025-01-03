@@ -1,18 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MenubarContent } from "@/components/ui/menubar";
-import {
-  Menubar,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@radix-ui/react-menubar";
-import {
-  Github,
-  GithubIcon,
-  LucideGithub,
-  MailIcon,
-  TwitterIcon,
-} from "lucide-react";
+import { Menubar, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
+import { LucideGithub, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import CopierTexte from "./CopyToClip";
 
@@ -30,6 +19,7 @@ export const Socials = () => {
           <MenubarTrigger className="mr-8">
             <CopierTexte />
           </MenubarTrigger>
+
           <MenubarTrigger>
             <Link href="https://x.com/Mathx__dev" target="blank">
               <TwitterIcon />

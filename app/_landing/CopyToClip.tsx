@@ -12,10 +12,10 @@ const CopyText = () => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        setIsCopy(true); // Afficher la carte
+        setIsCopy(true);
         setTimeout(() => {
-          setIsCopy(false); // Masquer la carte après 1 seconde
-        }, 1500); // 1000 ms = 1 seconde
+          setIsCopy(false);
+        }, 1500);
       })
       .catch((err) => {
         console.error("Erreur lors de la copie : ", err);
@@ -23,22 +23,26 @@ const CopyText = () => {
   };
 
   return (
-    <div>
-      {isCopy ? (
+    <div className="relative">
+      {isCopy && (
         <Card className="w-80 flex items-center justify-center pt-6 absolute bottom-24 -translate-x-36">
           <CardContent className="flex items-center justify-center">
-            Email Copied to clipboard{" "}
+            Email Copié dans le presse-papiers{" "}
             <span className="ml-2">
               <Check className="text-green-500" />
             </span>
           </CardContent>
         </Card>
-      ) : (
-        ""
       )}
-      <button onClick={copyToClip}>
-        <Mail />
-      </button>
+      {/* Élément cliquable personnalisé */}
+      <span
+        onClick={copyToClip}
+        className="cursor-pointer p-2    flex items-center"
+        role="button"
+        tabIndex={0}
+      >
+        <Mail className="mr-2" />
+      </span>
     </div>
   );
 };
