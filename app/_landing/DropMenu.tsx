@@ -1,26 +1,6 @@
 "use client";
 
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  Languages,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  MonitorCog,
-  Moon,
-  Plus,
-  PlusCircle,
-  Settings,
-  Sun,
-  SunMoon,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react";
+import { MonitorCog, Moon, Sun, SunMoon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +11,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
