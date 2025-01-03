@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { MenubarContent } from "@/components/ui/menubar";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
 import { LucideGithub, TwitterIcon } from "lucide-react";
 import Link from "next/link";

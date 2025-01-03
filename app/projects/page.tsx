@@ -1,4 +1,4 @@
-import { Divide, Frown } from "lucide-react";
+import { Frown } from "lucide-react";
 
 export default function projects() {
   return (
