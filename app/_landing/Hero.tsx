@@ -18,7 +18,7 @@ export const Hero = () => {
             <span className="rounded-full bg-yellow-300/10 px-3 py-1 text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10">
               Full-Stack Developer
             </span>
-            <span className="ml-2 rounded-full bg-yellow-300/10 px-3 py-1 text-sm font-semibold leading-6 text-yellow-400 ring-1 ring-inset ring-yellow-400/10">
+            <span className="ml-2 rounded-full bg-yellow-300/10 px-3 py-1 text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10">
               Junior
             </span>
           </div>
