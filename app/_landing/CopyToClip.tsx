@@ -26,11 +26,11 @@ const CopyText = () => {
     <div className="relative">
       {isCopy && (
         <Card className="w-80 flex items-center justify-center pt-6 absolute bottom-24 -translate-x-36">
-          <CardContent className="flex items-center justify-center">
-            Email Copié dans le presse-papiers{" "}
-            <span className="ml-2">
-              <Check className="text-green-500" />
-            </span>
+          <CardContent className="flex items-center justify-center translate-x-8">
+            Email Copié dans le presse-papiers
+          </CardContent>
+          <CardContent>
+            <Check className="text-green-500" />
           </CardContent>
         </Card>
       )}
