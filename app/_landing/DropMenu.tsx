@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import { useTranslation } from "next-i18next";
+
 export const DropMenu = () => {
   const { setTheme } = useTheme();
   return (
