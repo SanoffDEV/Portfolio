@@ -1,6 +1,5 @@
-import { Hero } from "./_landing/Hero";
+import { Hero } from "./_landing/Hero"; // Ton composant Hero, comme tu l'as mentionné
 
 export default function Home() {
-  <title>azzz</title>;
   return <Hero />;
 }

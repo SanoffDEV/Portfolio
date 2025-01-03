@@ -6,7 +6,7 @@ import CopierTexte from "./CopyToClip";
 export const Socials = () => {
   return (
     <div className="absolute flex  flex-col items-center bottom-8 left-1/2 -translate-x-24">
-      <h2 className="mb-2">Contact Me </h2>
+      <h2 className="mb-2">Contact Me</h2>
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger className="mr-8">
