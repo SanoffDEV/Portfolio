@@ -27,5 +27,5 @@ export const TagCloudComponent = () => {
     TagCloud(container, texts, TagCloudOptions);
   }, []);
 
-  return;
+  return <div></div>;
 };
