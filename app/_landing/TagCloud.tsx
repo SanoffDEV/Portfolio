@@ -1,5 +1,6 @@
 "use client";
-
+/* eslint-disable */
+/* eslint no-use-before-define: 2 */ // --> ON
 import { useEffect } from "react";
 import TagCloud from "TagCloud";
 
