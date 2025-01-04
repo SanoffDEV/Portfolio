@@ -18,13 +18,13 @@ export const TagCloudComponent = () => {
       "Git",
     ];
 
-    const options = {
+    const TagCloudOptions = {
       maxSpeed: "slow",
       initSpeed: "slow",
     };
 
     // Initialisation de TagCloud
-    TagCloud(container, texts, options);
+    TagCloud(container, texts, TagCloudOptions);
   }, []);
 
   return;
