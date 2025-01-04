@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { TagCloudComponent } from "./TagCloud";
 import { Socials } from "./Socials";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { DropMenu } from "./DropMenu";
 
 export const Hero = () => {
@@ -12,13 +12,13 @@ export const Hero = () => {
         <DropMenu />
       </div>
 
-      <div className="lg:mt-56 pl-32 grid grid-cols-2">
+      <div className="flex flex-col justify-center items-center md:mt-32 lg:pl-32 md:grid md:grid-cols-2 px-5 lg:pt-24">
         <div>
           <div className="mt-24 sm:mt-32 lg:mt-16">
-            <span className="rounded-full bg-yellow-300/10 px-3 py-1 text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10">
+            <span className="rounded-full bg-yellow-300/10 px-3 py-1 xl:text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10 lg:text-xs text-xs mr-3">
               Full-Stack Developer
             </span>
-            <span className="ml-2 rounded-full bg-yellow-300/10 px-3 py-1 text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10">
+            <span className="rounded-full bg-yellow-300/10 px-3 py-1 xl:text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10 lg:text-xs text-xs">
               Junior
             </span>
           </div>
@@ -27,7 +27,7 @@ export const Hero = () => {
             Mathis PICOT
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+          <p className="mt-6 xl:text-lg lg:text-sm leading-8 text-gray-600 dark:text-gray-300">
             Web developer for 1 year. I am a Full-Stack developer with Next.js.
           </p>
 
@@ -41,13 +41,14 @@ export const Hero = () => {
             >
               My projects
             </Link>
-            <Button size="lg" variant="outline" className="">
-              My skills <ArrowRight />
+            <Button size="lg" variant="outline">
+              My skills{" "}
+              <ArrowDown className="transition-transform transform rotate-0 lg:rotate-270" />
             </Button>
           </div>
         </div>
         <div>
-          <div className="tagcloud-container text-yellow-300  text-lg ml-80 mt-28">
+          <div className="tagcloud-container text-yellow-300  text-lg xl:ml-80 mt-28 lg:ml-52">
             <TagCloudComponent />
           </div>
         </div>
@@ -55,7 +56,7 @@ export const Hero = () => {
 
       <div className="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
         <div
-          className="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white  shadow-xl shadow-white/10 ring-1 ring-yellow-50 dark:ring-yellow-400/10 dark:bg-black/20"
+          className="   absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white  shadow-xl shadow-black/10 ring-1 ring-yellow-500/20 dark:ring-yellow-400/10 dark:bg-black/20"
           aria-hidden="true"
         ></div>
       </div>
