@@ -17,9 +17,14 @@ export const TagCloudComponent = () => {
       "Git",
     ];
 
+    const options = {
+      maxSpeed: "slow",
+      initSpeed: "slow",
+    };
+
     // Initialisation de TagCloud
-    TagCloud(container, texts);
+    TagCloud(container, texts, options);
   }, []);
 
-  return <div></div>;
+  return;
 };
