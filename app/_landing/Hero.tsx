@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { TagCloudComponent } from "./TagCloud";
 import { Socials } from "./Socials";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { DropMenu } from "./DropMenu";
 
 export const Hero = () => {
@@ -43,7 +43,8 @@ export const Hero = () => {
             </Link>
             <Button size="lg" variant="outline">
               My skills{" "}
-              <ArrowDown className="transition-transform transform rotate-0 lg:rotate-270" />
+              <ArrowDown className="transition-transform transform rotate-0 md:hidden" />
+              <ArrowRight className=" hidden  md:flex" />
             </Button>
           </div>
         </div>
