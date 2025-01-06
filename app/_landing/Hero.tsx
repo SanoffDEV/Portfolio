@@ -8,11 +8,11 @@ import { DropMenu } from "./DropMenu";
 export const Hero = () => {
   return (
     <main className="h-full lg:overflow-y-hidden overflow-x-hidden">
-      <div className="absolute right-10 top-6">
+      <div className="absolute right-10 top-6 sm-hidden">
         <DropMenu />
       </div>
 
-      <div className="flex flex-col justify-center items-center md:mt-32 lg:pl-32 md:grid md:grid-cols-2 px-5 lg:pt-24">
+      <div className=" mt-7 flex flex-col justify-center items-center md:mt-32 lg:pl-32 md:grid md:grid-cols-2 px-5 lg:pt-24">
         <div>
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <span className="rounded-full bg-yellow-300/10 px-3 py-1 xl:text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10 lg:text-xs text-xs mr-3">
@@ -49,7 +49,7 @@ export const Hero = () => {
           </div>
         </div>
         <div>
-          <div className="tagcloud-container text-yellow-300  text-lg xl:ml-80 mt-10 sm:mt28 lg:ml-52">
+          <div className="tagcloud-container text-yellow-300  text-lg xl:ml-80 mt- sm:mt28 lg:ml-52">
             <TagCloudComponent />
           </div>
         </div>
