@@ -7,7 +7,7 @@ import { DropMenu } from "./DropMenu";
 
 export const Hero = () => {
   return (
-    <main className="h-full overflow-hidden">
+    <main className="h-full lg:overflow-hidden">
       <div className="absolute right-10 top-6">
         <DropMenu />
       </div>
