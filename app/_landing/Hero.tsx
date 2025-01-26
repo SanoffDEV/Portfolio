@@ -49,7 +49,10 @@ export const Hero = () => {
           </div>
         </div>
         <div>
-          <div className="tagcloud-container text-yellow-300  text-lg xl:ml-80 mt- sm:mt-20 lg:ml-52">
+          <div
+            className="tagcloud-container flex items-center
+           text-yellow-300  text-lg xl:ml-80  sm:mt-40 lg:ml-52"
+          >
             <TagCloudComponent />
           </div>
         </div>
