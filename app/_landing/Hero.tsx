@@ -8,7 +8,7 @@ import { IconCloudDemo } from "./TagCloud";
 
 export const Hero = () => {
   return (
-    <main className="h-full lg:overflow-y-hidden overflow-x-hidden relative">
+    <main className="h-full overflow-y-hidden overflow-x-hidden relative">
       <div className="absolute right-4 top-4 block sm-hidden sm:top-6 sm:right-10">
         <DropMenu />
       </div>
