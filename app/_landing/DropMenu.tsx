@@ -1,6 +1,6 @@
 "use client";
 
-import { MonitorCog, Moon, Sun, SunMoon } from "lucide-react";
+import { MonitorCog, Moon, Settings, Sun, SunMoon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +23,9 @@ export const DropMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Settings</Button>
+        <Button variant="ghost" className="bg-white/5">
+          <Settings />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Settings</DropdownMenuLabel>

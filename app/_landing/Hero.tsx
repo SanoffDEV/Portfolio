@@ -9,11 +9,11 @@ import { IconCloudDemo } from "./TagCloud";
 export const Hero = () => {
   return (
     <main className="h-full lg:overflow-y-hidden overflow-x-hidden relative">
-      <div className="absolute right-10 top-6 block sm-hidden">
+      <div className="absolute right-4 top-4 block sm-hidden sm:top-6 sm:right-10">
         <DropMenu />
       </div>
 
-      <div className=" flex flex-col justify-center items-center md:mt-32 lg:pl-32 md:grid md:grid-cols-2  lg:pt-24">
+      <div className="mx-5 my-6 flex flex-col justify-center items-center md:mt-32 lg:pl-32 md:grid md:grid-cols-2  lg:pt-24">
         <div>
           <div>
             <span className="rounded-full bg-yellow-300/10 px-3 py-1 xl:text-sm font-semibold leading-6 text-yellow-300 ring-1 ring-inset ring-yellow-300/10 lg:text-xs text-xs mr-3">
