@@ -310,7 +310,9 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   return (
     <canvas
       onKeyDown={(a) => {
-        setRotation({ x: 0, y: 0 });
+        setRotation(
+          a.key === "ArrowLeft" ? { x: 0, y: 0 } : { x: Math.PI, y: 0 }
+        );
       }}
       ref={canvasRef}
       width={400}
