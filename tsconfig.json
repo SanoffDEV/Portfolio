@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_landing/TagCloud.jsx"
+    "app/_landing/TagCloud.tsx"
   ],
   "exclude": ["node_modules"]
 }
