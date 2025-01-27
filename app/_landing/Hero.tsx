@@ -52,7 +52,7 @@ export const Hero = () => {
         <div>
           <div
             className=" 
-           text-yellow-300  text-lg xl:ml-80 m"
+           text-yellow-300  text-lg xl:ml-80 -mt-16 sm:mt-0 "
           >
             <IconCloudDemo />
           </div>
