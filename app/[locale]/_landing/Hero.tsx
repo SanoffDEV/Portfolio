@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 
@@ -5,8 +7,12 @@ import { Socials } from "./Socials";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { DropMenu } from "./DropMenu";
 import { IconCloudDemo } from "./TagCloud";
+import { useScopedI18n } from "@/locales/client";
 
 export const Hero = () => {
+  const tBtn = useScopedI18n("Buttons");
+
+  const tDesc = useScopedI18n("Description");
   return (
     <main className="h-full overflow-y-hidden overflow-x-hidden relative">
       <div className="absolute right-4 top-4 block sm-hidden sm:top-6 sm:right-10">
@@ -29,7 +35,7 @@ export const Hero = () => {
           </h1>
 
           <p className="mt-6 xl:text-lg lg:text-sm leading-8 text-gray-600 dark:text-gray-300">
-            Web developer for 1 year. I am a Full-Stack developer with Next.js.
+            {tDesc("Webdeveloper")}
           </p>
 
           <div className="mt-10 flex items-center gap-x-6">
@@ -40,10 +46,10 @@ export const Hero = () => {
                 variant: "ghost",
               })}  text-gray-800  bg-yellow-300 hover:bg-yellow-200`}
             >
-              My projects
+              {tBtn("MyProjects")}
             </Link>
             <Button size="lg" variant="outline">
-              My skills{" "}
+              {tBtn("MySkills")}
               <ArrowDown className="transition-transform transform rotate-0 md:hidden" />
               <ArrowRight className=" hidden  md:flex" />
             </Button>

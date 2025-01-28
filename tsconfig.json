@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_landing/TagCloud.tsx",
+    "app/[locale]/_landing/TagCloud.tsx",
     "components/ui/icon-cloud.jsx"
   ],
   "exclude": ["node_modules"]
