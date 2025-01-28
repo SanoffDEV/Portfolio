@@ -15,4 +15,5 @@ export default {
   },
   Settings: "Paramètres",
   Language: "Langue",
+  Projects: "Il n'y a rien à voir ici pour le moment",
 } as const;

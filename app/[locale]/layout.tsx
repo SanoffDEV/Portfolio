@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import { ReactElement } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { I18nProviderClient } from "../../locales/client";
 import "./globals.css";
 import "./providers";
 import { Providers } from "./providers";
+import type { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +27,13 @@ export default function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  params: { locale: string };
 }>) {
+  // Cette partie est pour attendre la locale, comme tu l'as dans ton SubLayout
+  const { locale } = params;
+
   return (
-    <html lang="en" suppressHydrationWarning className="h-full">
+    <html lang={locale} suppressHydrationWarning className="h-full">
       <body
         className={`${geistSans.variable} font-sans h-full ${geistMono.variable} antialiased`}
       >
@@ -40,7 +43,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers locale={params.locale}>{children}</Providers>
+          {/* Utilisation du I18nProviderClient pour la locale */}
+          <I18nProviderClient locale={locale}>
+            <Providers locale={locale}>{children}</Providers>
+          </I18nProviderClient>
         </ThemeProvider>
       </body>
     </html>
