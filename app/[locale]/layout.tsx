@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import "./providers";
 import { Providers } from "./providers";
 
 const geistSans = Geist({
@@ -19,21 +20,17 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-// Ajoutez `async` à RootLayout si Next.js attend une fonction asynchrone
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-  params: { locale: string } | Promise<{ locale: string }>; // Permet la gestion des paramètres asynchrones
-}) {
-  // Si `params` peut être une Promise, résolvez-la ici
-  const resolvedParams = params instanceof Promise ? await params : params;
-
-  const locale = resolvedParams?.locale || "en"; // Par défaut "en"
-
+  params: {
+    locale: string;
+  };
+}>) {
   return (
-    <html lang={locale} suppressHydrationWarning className="h-full">
+    <html lang="en" suppressHydrationWarning className="h-full">
       <body
         className={`${geistSans.variable} font-sans h-full ${geistMono.variable} antialiased`}
       >
@@ -43,7 +40,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers locale={locale}>{children}</Providers>
+          <Providers locale={params.locale}>{children}</Providers>
         </ThemeProvider>
       </body>
     </html>
