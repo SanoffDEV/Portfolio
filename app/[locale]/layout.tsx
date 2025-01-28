@@ -5,6 +5,8 @@ import "./globals.css";
 import "./providers";
 import { Providers } from "./providers";
 import type { Metadata } from "next";
+import { types } from "util";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +30,11 @@ type Params = {
 export default function RootLayout({
   children,
   params,
+  projects,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: Params;
+  projects: ReactNode;
 }) {
   const { locale } = params;
 
@@ -46,7 +50,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <I18nProviderClient locale={locale}>
-            <Providers locale={locale}>{children}</Providers>
+            <Providers locale={locale}>
+              {children}
+              {projects}
+            </Providers>
           </I18nProviderClient>
         </ThemeProvider>
       </body>
