@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import "./providers";
 import { Providers } from "./providers";
 
 const geistSans = Geist({
@@ -23,14 +22,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}>) {
+  params: { locale: string }; // Corrigez ici si besoin
+}) {
   return (
-    <html lang="en" suppressHydrationWarning className="h-full">
+    <html
+      lang={params.locale || "en"}
+      suppressHydrationWarning
+      className="h-full"
+    >
       <body
         className={`${geistSans.variable} font-sans h-full ${geistMono.variable} antialiased`}
       >
