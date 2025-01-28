@@ -15,5 +15,7 @@ export default {
   },
   Settings: "Settings",
   Language: "Language",
-  Projects: "There is nothing to see here for now",
+  Project: {
+    Projects: "There is nothing to see here for now",
+  },
 } as const;
