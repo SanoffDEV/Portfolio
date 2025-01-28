@@ -21,14 +21,17 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
+type Params = {
+  locale: string;
+};
+
 export default function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
-  // Cette partie est pour attendre la locale, comme tu l'as dans ton SubLayout
+  params: Params;
+}) {
   const { locale } = params;
 
   return (
@@ -42,7 +45,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Utilisation du I18nProviderClient pour la locale */}
           <I18nProviderClient locale={locale}>
             <Providers locale={locale}>{children}</Providers>
           </I18nProviderClient>
