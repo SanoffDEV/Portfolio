@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProviderClient } from "../../locales/client";
