@@ -19,19 +19,18 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string }; // Corrigez ici si besoin
+  params: { locale: string };
 }) {
+  // Si nécessaire, récupérez dynamiquement les données liées à `locale` ici
+  const locale = params.locale || "en"; // Par défaut, utilisez "en"
+
   return (
-    <html
-      lang={params.locale || "en"}
-      suppressHydrationWarning
-      className="h-full"
-    >
+    <html lang={locale} suppressHydrationWarning className="h-full">
       <body
         className={`${geistSans.variable} font-sans h-full ${geistMono.variable} antialiased`}
       >
@@ -41,7 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers locale={params.locale}>{children}</Providers>
+          <Providers locale={locale}>{children}</Providers>
         </ThemeProvider>
       </body>
     </html>
