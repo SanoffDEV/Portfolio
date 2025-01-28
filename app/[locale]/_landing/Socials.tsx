@@ -4,7 +4,7 @@ import { Menubar, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
 import { LucideGithub, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import CopierTexte from "./CopyToClip";
-import { useI18n, useScopedI18n } from "@/locales/client";
+import { useI18n } from "@/locales/client";
 
 export const Socials = () => {
   const t = useI18n();
