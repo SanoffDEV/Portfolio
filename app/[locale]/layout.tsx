@@ -19,15 +19,18 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
+// Ajoutez `async` à RootLayout si Next.js attend une fonction asynchrone
 export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: string } | Promise<{ locale: string }>; // Permet la gestion des paramètres asynchrones
 }) {
-  // Si nécessaire, récupérez dynamiquement les données liées à `locale` ici
-  const locale = params.locale || "en"; // Par défaut, utilisez "en"
+  // Si `params` peut être une Promise, résolvez-la ici
+  const resolvedParams = params instanceof Promise ? await params : params;
+
+  const locale = resolvedParams?.locale || "en"; // Par défaut "en"
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">
