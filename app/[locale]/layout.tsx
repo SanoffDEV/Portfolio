@@ -5,7 +5,7 @@ import "./globals.css";
 import "./providers";
 import { Providers } from "./providers";
 import type { Metadata } from "next";
-import { types } from "util";
+
 import { ReactNode } from "react";
 
 const geistSans = Geist({
@@ -27,14 +27,14 @@ type Params = {
   locale: string;
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: Params;
+  params: Promise<Params>; // ✅ Accepter `params` comme une promesse
 }) {
-  const { locale } = params;
+  const { locale } = await params; // ✅ Attendre `params` avant de l'utiliser
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">
