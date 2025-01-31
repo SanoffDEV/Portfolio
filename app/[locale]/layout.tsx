@@ -23,18 +23,18 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-type Params = {
+interface Params {
   locale: string;
-};
+}
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: Promise<Params>; // ✅ Accepter `params` comme une promesse
+  params: Params; // ✅ On garde un objet simple
 }) {
-  const { locale } = await params; // ✅ Attendre `params` avant de l'utiliser
+  const locale = params?.locale || "en"; // ✅ Valeur par défaut si `locale` est undefined
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">
