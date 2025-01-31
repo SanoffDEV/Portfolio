@@ -2,10 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProviderClient } from "../../locales/client";
 import "./globals.css";
-import "./providers";
 import { Providers } from "./providers";
 import type { Metadata } from "next";
-
 import { ReactNode } from "react";
 
 const geistSans = Geist({
@@ -23,18 +21,15 @@ export const metadata: Metadata = {
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-interface Params {
-  locale: string;
-}
-
-export default function RootLayout({
+// ✅ On s'assure que `params` est bien un objet et non une promesse
+export default function LocaleLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: Params; // ✅ On garde un objet simple
+  params: { locale: string }; // ✅ Correction du type ici
 }) {
-  const locale = params?.locale || "en"; // ✅ Valeur par défaut si `locale` est undefined
+  const locale = params.locale || "en"; // ✅ Valeur par défaut
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">

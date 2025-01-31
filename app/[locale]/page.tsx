@@ -1,5 +1,5 @@
-import { Hero } from "./_landing/Hero"; // Ton composant Hero, comme tu l'as mentionné
+import { Hero } from "../[locale]/_landing/Hero"; // ✅ Vérifie bien le chemin !
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
   return <Hero />;
 }
