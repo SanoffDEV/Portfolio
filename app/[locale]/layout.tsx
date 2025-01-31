@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { ReactElement } from "react";
 import { I18nProviderClient } from "../../locales/client";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -12,21 +12,21 @@ const geistSans = Geist({
 });
 
 const geistMono = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-// Charge uniquement cette police quand elle est utilisée
 
 export const metadata: Metadata = {
   title: "Mathis's Portfolio",
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-export default async function SubLayout({
+// Modification ici: params n'est plus une promesse
+export default async function RootLayout({
   params,
   children,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string }; // Mettre à jour le type ici
   children: ReactElement;
 }) {
-  const { locale } = await params;
+  const { locale } = params; // Pas besoin de await ici
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">
