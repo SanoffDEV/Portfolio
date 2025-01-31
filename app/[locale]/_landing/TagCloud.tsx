@@ -1,12 +1,9 @@
 import { IconCloud } from "@/components/ui/icon-cloud";
 
 const slugs = [
-  "nextdotjs",
   "typescript",
   "javascript",
-  "node-dot-js",
   "react",
-  "next-dot-js",
   "html5",
   "css3",
   "prisma",
@@ -17,7 +14,6 @@ const slugs = [
   "zod",
   "tailwindcss",
   "lucide",
-  "visualstudiocode",
   "Node.js",
   "shadcnui",
 ];

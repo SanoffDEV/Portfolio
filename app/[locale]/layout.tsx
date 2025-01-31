@@ -1,35 +1,32 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ReactElement } from "react";
 import { I18nProviderClient } from "../../locales/client";
-import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Providers } from "./providers";
-import type { Metadata } from "next";
-import { ReactNode } from "react";
+import { Metadata } from "next";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistMono = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+// Charge uniquement cette police quand elle est utilisée
 
 export const metadata: Metadata = {
   title: "Mathis's Portfolio",
   description: "Website created and designed by Mathis for my portfolio",
 };
 
-// ✅ On s'assure que `params` est bien un objet et non une promesse
-export default function LocaleLayout({
-  children,
+export default async function SubLayout({
   params,
+  children,
 }: {
-  children: ReactNode;
-  params: { locale: string }; // ✅ Correction du type ici
+  params: Promise<{ locale: string }>;
+  children: ReactElement;
 }) {
-  const locale = params.locale || "en"; // ✅ Valeur par défaut
+  const { locale } = await params;
 
   return (
     <html lang={locale} suppressHydrationWarning className="h-full">
